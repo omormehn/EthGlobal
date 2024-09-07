@@ -93,6 +93,13 @@ contract Bank {
       return status;
     }
 
+  function TransferTo(address to, uint256 amount)
+  public
+  detect1
+  minDep(amount) {
+    token1.transfer(to, amount);
+  }
+
     function deposit(uint256 amount)
      public
      detect1
